@@ -260,3 +260,5 @@ var AdminTree = (function () {
     return my;
 
 }());
+
+export default AdminTree;
