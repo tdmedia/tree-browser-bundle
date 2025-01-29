@@ -36,6 +36,7 @@ class AddTreesCompilerPass implements CompilerPassInterface
 
             $controller = new ChildDefinition('cmf_tree_browser.controller_prototype');
             $controller->replaceArgument(0, $tree);
+            $controller->setPublic(true);
             $container->setDefinition($alias.'.cmf_tree_controller', $controller);
             $controllers[] = array('id' => $alias.'.cmf_tree_controller', 'alias' => $alias);
         }
