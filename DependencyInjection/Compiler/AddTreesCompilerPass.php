@@ -13,7 +13,7 @@ namespace Symfony\Cmf\Bundle\TreeBrowserBundle\DependencyInjection\Compiler;
 
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\DependencyInjection\DefinitionDecorator;
+use Symfony\Component\DependencyInjection\ChildDefinition;
 
 class AddTreesCompilerPass implements CompilerPassInterface
 {
@@ -34,7 +34,7 @@ class AddTreesCompilerPass implements CompilerPassInterface
                 ? $tag[0]['alias']
                 : $treeId;
 
-            $controller = new DefinitionDecorator('cmf_tree_browser.controller_prototype');
+            $controller = new ChildDefinition('cmf_tree_browser.controller_prototype');
             $controller->replaceArgument(0, $tree);
             $container->setDefinition($alias.'.cmf_tree_controller', $controller);
             $controllers[] = array('id' => $alias.'.cmf_tree_controller', 'alias' => $alias);

@@ -97,6 +97,12 @@ var AdminTree = (function () {
                 "valid_children": "all",
                 "types":          config.types
             },
+            "themes": {
+                "theme": "default",
+                "dots":  true,
+                "icons": true,
+                "url":    "/bundles/cmftreebrowser/js/themes/default/style.css",
+            },
             "ui": {
                 "initially_select" : [config.selected]
             },
