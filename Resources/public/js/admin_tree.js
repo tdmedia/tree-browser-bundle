@@ -1,3 +1,8 @@
+const routes = require('../../../../assets/js/routes.json');
+import Routing from '../../fosjsrouting/js/router.min.js';
+
+Routing.setRoutingData(routes);
+
 /**
  * define a tree used to see all content, move nodes and select things to edit
  */
